@@ -1,4 +1,4 @@
-# JS211_CurrentDateTimeProject[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages)
+# JS211_TicTacToe[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages)
 
 ![](http://en.gravatar.com/userimage/107370100/a08594145564536138dfaaf072c7b241.png)
 
@@ -6,22 +6,41 @@
 
 ## JavaScript 211 Project: Tic, Tac, Toe
 
-### Today's Checklist
+### Part 1: Tic, Tac, Toe in the termial
 
 1. Fork and Clone [Tic, Tac, Toe Repo](https://github.com/AustinCodingAcademy/JS211_TicTacToeProject.git)
 1. Ensure you have installed all dependencies/packages: `npm i`
-1. Look at the Unit Test, see what is being called, passed as input arguments, and what the expected result are.
+1. Open `main.js` and look at the Unit Test, see what is being called, passed as input arguments, and what the expected result are.
 1. Ensure you know how to run the unit test:
     * `npm test main.js` + `ctrl + c` to escape.
 1. Use a whiteboard to work out a solution. HOW DOES TIC, TAC, TOE actually work in excruciating detail?
 1. Translate the broad ideas to pseudo code
 1. Convert the pseudo code to real JavaScript Code
-1. Type into your text editor the JavaScript code you've come up with one step at a time
+1. Add the the JavaScript code you've come up with one step at a time in `main.js`
 1. Work through your bugs.
 1. Use `node main.js` to run the game + `ctrl + c` to escape.
 1. Achieve green checks for each of your unit tests.
 
-### Hints
+#### Part 2: Use the DOM to build a GUI for your game
+
+1. Open `index.html` to find a pre-build 3x3 grid using `<td>` tags (table-data)
+    * This html file is styled with `tictactoe.css`
+    * It also has a script tag that links it to `dom-tictactoe.js`
+1. Open `dom-tictactoe.js`. You'll find starter code that helps you attach the logic from part 1 to the DOM so a user can use the screen instead of the terminal to play the game.
+1. Follow the instructions at the top of the js file to find the `@Todo`s and place your code in the appropriate place to make the game work!
+
+#### Part 3: Build It from Scratch
+
+1. Push Yourself Further
+1. Create a new repo in GitHub, clone it
+1. Create an `index.html` file.
+1. Create a `tictactoe-styles.css` file
+1. Create a `tictactoe-scripts.js` file
+1. Build your game working through each little step one must complete to do it.
+
+*This is where you get good!*
+
+#### Hints
 
 1. Run your unit tests first!!
 1. Use [repl.it](https://www.repl.it) to write the solution code first. (its a faster environment vs using the `node main.js` command over and over again.)
