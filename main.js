@@ -10,44 +10,89 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// creates and empty "board" for the user to see where marks can be placed.
+// using let because the variable is expected to change with more 'X's and 'O's to add
+let board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+];
 
-const pigLatin = (word) => {
+// assigns the first mark as 'X'
+// using let because the variable is expected to change from 'X' to 'O' and back
+let playerTurn = 'X';
 
-  // Your code here
-
+// is a function that print the current status of the board using the variable - board
+const printBoard = () => {
+  console.log('   0  1  2');
+  console.log('0 ' + board[0].join(' | '));
+  console.log('  ---------');
+  console.log('1 ' + board[1].join(' | '));
+  console.log('  ---------');
+  console.log('2 ' + board[2].join(' | '));
 }
 
-// the first function called in the program to get an input from the user
-// to run the function use the command: node main.js
-// to close it ctrl + C
+const horizontalWin = () => {
+  // Your code here to check for horizontal wins
+}
+
+const verticalWin = () => {
+  // Your code here to check for vertical wins
+}
+
+const diagonalWin = () => {
+  // Your code here to check for diagonal wins
+}
+
+const checkForWin = () => {
+  // Your code here call each of the check for types of wins
+}
+
+const ticTacToe = (row, column) => {
+  // Your code here to place a marker on the board
+  // then check for a win
+}
+
 const getPrompt = () => {
-  rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
-    getPrompt();
+  printBoard();
+  console.log("It's Player " + playerTurn + "'s turn.");
+  rl.question('row: ', (row) => {
+    rl.question('column: ', (column) => {
+      ticTacToe(row, column);
+      getPrompt();
+    });
   });
 }
+
 
 // Unit Tests
 // You use them run the command: npm test main.js
 // to close them ctrl + C
 if (typeof describe === 'function') {
 
-  describe('#pigLatin()', () => {
-    it('should translate a simple word', () => {
-      assert.equal(pigLatin('car'), 'arcay');
-      assert.equal(pigLatin('dog'), 'ogday');
+  describe('#ticTacToe()', () => {
+    it('should place mark on the board', () => {
+      ticTacToe(1, 1);
+      assert.deepEqual(board, [ [' ', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
-    it('should translate a complex word', () => {
-      assert.equal(pigLatin('create'), 'eatecray');
-      assert.equal(pigLatin('valley'), 'alleyvay');
+    it('should alternate between players', () => {
+      ticTacToe(0, 0);
+      assert.deepEqual(board, [ ['O', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
-    it('should attach "yay" if word begins with vowel', () => {
-      assert.equal(pigLatin('egg'), 'eggyay');
-      assert.equal(pigLatin('emission'), 'emissionyay');
+    it('should check for vertical wins', () => {
+      board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
+      assert.equal(verticalWin(), true);
     });
-    it('should lowercase and trim word before translation', () => {
-      assert.equal(pigLatin('HeLlO '), 'ellohay');
-      assert.equal(pigLatin(' RoCkEt'), 'ocketray');
+    it('should check for horizontal wins', () => {
+      board = [ ['X', 'X', 'X'], [' ', ' ', ' '], [' ', ' ', ' '] ];
+      assert.equal(horizontalWin(), true);
+    });
+    it('should check for diagonal wins', () => {
+      board = [ ['X', ' ', ' '], [' ', 'X', ' '], [' ', ' ', 'X'] ];
+      assert.equal(diagonalWin(), true);
+    });
+    it('should detect a win', () => {
+      assert.equal(checkForWin(), true);
     });
   });
 } else {
@@ -55,17 +100,3 @@ if (typeof describe === 'function') {
   getPrompt();
 
 }
-
-
-
-
-
-
-// **********
-//   HINTS
-// **********
-
-// break your code into pieces and focus on one at a time...
-// 1. if word begins with a vowel send to one function: adds "yay"
-// 2. if word begins in with a consonant send to another function: splices off beginning, returns word with new ending.
-// 3. if multiple words, create array of words, loop over them, sending them to different functions and creating a new array with the new words.

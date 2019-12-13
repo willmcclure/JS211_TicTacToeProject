@@ -4,21 +4,21 @@
 
 # Austin Coding Academy
 
-## JavaScript 211 Project: Pig Latin
+## JavaScript 211 Project: Tic, Tac, Toe
 
 ### Today's Checklist
 
-1. Fork and Clone [Pig Latin Repo](https://github.com/AustinCodingAcademy/JS211_PigLatinProject.git)
+1. Fork and Clone [Tic, Tac, Toe Repo](https://github.com/AustinCodingAcademy/JS211_TicTacToeProject.git)
 1. Ensure you have installed all dependencies/packages: `npm i`
 1. Look at the Unit Test, see what is being called, passed as input arguments, and what the expected result are.
 1. Ensure you know how to run the unit test:
-    * `npm test main.js`
-1. Use a whiteboard to work out a solution to building the Pig Latin program
-1. Translate the broad ideas to psuedo code
-1. Convert the psuedo code to real JavaScript Code
+    * `npm test main.js` + `ctrl + c` to escape.
+1. Use a whiteboard to work out a solution. HOW DOES TIC, TAC, TOE actually work in excruciating detail?
+1. Translate the broad ideas to pseudo code
+1. Convert the pseudo code to real JavaScript Code
 1. Type into your text editor the JavaScript code you've come up with one step at a time
 1. Work through your bugs.
-1. Use `node main.js` to run the game
+1. Use `node main.js` to run the game + `ctrl + c` to escape.
 1. Achieve green checks for each of your unit tests.
 
 ### Hints
@@ -26,9 +26,10 @@
 1. Run your unit tests first!!
 1. Use [repl.it](https://www.repl.it) to write the solution code first. (its a faster environment vs using the `node main.js` command over and over again.)
 1. Read the comments in `main.js`
-1. Use the [JS Docs at W3S](https://www.w3schools.com/jsref/jsref_split.asp)
+1. Use the [JS Docs at W3S on Accessing the First Array Element](https://www.w3schools.com/js/js_arrays.asp)
 1. Push yourself further.
 1. Look at your hints!
+1. Don't skip the planning portion!!
 1. **Clone, setup, testing, and running instructions for all projects is below**
 
 ******
@@ -65,6 +66,7 @@ node modules we use in this class (see `package.json`)
 1. Use your textEditor (VS Code) to change your files.
 1. When you're finished `git status`, stage your file `git add .`, commit your changes `git commit -m "functions working"`, and push to
 GitHub `git push`
+
     ```bash
     git status
     git add .
