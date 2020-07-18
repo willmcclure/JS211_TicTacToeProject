@@ -20,6 +20,7 @@
 1. Work through your bugs.
 1. Use `node main.js` to run the game + `ctrl + c` to escape.
 1. Achieve green checks for each of your unit tests.
+1. Bonus Challenge: Since the game can only be one with three marks in a row, the minimum amount of marks required for a possible win is 5. There is no reason to run `checkForWin()` for marks 1-4. Adjust the program to only run `checkForwin()` after at least 5 moves have been made.
 
 #### Part 2: Use the DOM to build a GUI for your game
 
