@@ -33,24 +33,79 @@ const printBoard = () => {
 }
 
 const horizontalWin = () => {
-  // Your code here to check for horizontal wins
-}
+  if (
+    board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn ||
+    board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn ||
+    board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn
+  ) { 
+    return true
+  } 
+  else {
+    return false
+  }
+} 
 
 const verticalWin = () => {
-  // Your code here to check for vertical wins
+  if(
+    board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn || 
+    board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn || 
+    board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn
+  ) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 
 const diagonalWin = () => {
-  // Your code here to check for diagonal wins
+  if (
+  board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn || 
+  board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn
+) {
+  return true 
+} else {
+  return false
+}
 }
 
 const checkForWin = () => {
-  // Your code here call each of the check for types of wins
+  if ( 
+    diagonalWin() === true ||
+    horizontalWin() === true ||
+    verticalWin() === true
+  ) {
+    return true 
+  } else {
+    return false
+  }
 }
 
 const ticTacToe = (row, column) => {
-  // Your code here to place a marker on the board
-  // then check for a win
+  // create marker on board
+  board[row][column] = playerTurn
+  // check for win and display message
+  if (checkForWin() === true) {
+    let message = "Congrats! Player " + playerTurn + "won!"
+
+  // reset board for new game
+  board = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
+  ]
+  }
+  changePlayers()
+}
+
+// change players
+const changePlayers = () => {
+  if (playerTurn === "X") {
+    playerTurn = "O"
+  } 
+  else {
+    playerTurn = "X"
+  }
 }
 
 const getPrompt = () => {
